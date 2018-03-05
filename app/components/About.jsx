@@ -11,7 +11,7 @@ const About = (props) => {
               I used <a href="https://facebook.github.io/react"> React library</a>  in this project
             </li>
             <li>
-              I used  <a href="https://openweathermap.org/">openWeatherMap</a> to search for weatherdata by city name
+              I used  <a href="https://openweathermap.org/">openWeatherMap</a>  to search for weatherdata by city name
             </li>
             <li>
                 This is the <a href="https://github.com/Zeydi/ReactWeather">Github </a> repository for this App.
