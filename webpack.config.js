@@ -42,10 +42,10 @@ module.exports = {
         exclude: /(node_modules|bower_components)/
       },
       {
-        test: /\.(eot|svg|ttf|woff|woff2|jpg|png|gif|swf|ogg)$/,
-        loader: 'file-loader',
+        test: /\.(jpg|png|svg)$/,
+        loader: 'url-loader',
         options: {
-          publicPath: '/',
+          limit: 25000,
         }
       },
     ]
