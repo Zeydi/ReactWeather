@@ -26759,21 +26759,61 @@
 
 	var React = __webpack_require__(8);
 
+	var _require = __webpack_require__(166),
+	    Link = _require.Link;
+
 	var About = function About(props) {
-	    return React.createElement(
-	        'div',
+	  return React.createElement(
+	    'div',
+	    null,
+	    React.createElement(
+	      'h1',
+	      { className: 'text-center' },
+	      'About'
+	    ),
+	    React.createElement(
+	      'p',
+	      null,
+	      'This is a weather application build on React in the complete React web App Developer course'
+	    ),
+	    React.createElement(
+	      'ul',
+	      null,
+	      React.createElement(
+	        'li',
 	        null,
+	        'I used ',
 	        React.createElement(
-	            'h3',
-	            null,
-	            'About'
+	          'a',
+	          { href: 'https://facebook.github.io/react' },
+	          ' React library'
 	        ),
+	        '  in this project'
+	      ),
+	      React.createElement(
+	        'li',
+	        null,
+	        'I used  ',
 	        React.createElement(
-	            'p',
-	            null,
-	            'Welcome to the about page'
-	        )
-	    );
+	          'a',
+	          { href: 'https://openweathermap.org/' },
+	          'openWeatherMap'
+	        ),
+	        'to search for weatherdata by city name'
+	      ),
+	      React.createElement(
+	        'li',
+	        null,
+	        'This is the ',
+	        React.createElement(
+	          'a',
+	          { href: 'https://github.com/Zeydi/ReactWeather' },
+	          'Github '
+	        ),
+	        ' repository for this App.'
+	      )
+	    )
+	  );
 	};
 
 	module.exports = About;
