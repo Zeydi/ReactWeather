@@ -26793,13 +26793,13 @@
 	      React.createElement(
 	        'li',
 	        null,
-	        'I used  ',
+	        'I used ',
 	        React.createElement(
 	          'a',
 	          { href: 'https://openweathermap.org/' },
-	          'openWeatherMap'
+	          ' openWeatherMap'
 	        ),
-	        'to search for weatherdata by city name'
+	        '  to search for weatherdata by city name'
 	      ),
 	      React.createElement(
 	        'li',
