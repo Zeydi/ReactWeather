@@ -24934,6 +24934,7 @@
 
 	var React = __webpack_require__(8);
 	var Nav = __webpack_require__(224);
+	var rains = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"../../image/rains.png\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 
 	var Main = function Main(props) {
 	  return React.createElement(
@@ -24948,7 +24949,8 @@
 	        { className: 'columns medium-6 large-6 small-centered' },
 	        props.children
 	      )
-	    )
+	    ),
+	    React.createElement('img', { src: rains, alt: 'life is better' })
 	  );
 	};
 	module.exports = Main;

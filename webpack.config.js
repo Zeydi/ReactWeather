@@ -40,7 +40,14 @@ module.exports = {
         },
         test: /\.jsx?$/,
         exclude: /(node_modules|bower_components)/
-      }
+      },
+      {
+        test: /\.(eot|svg|ttf|woff|woff2|jpg|png|gif|swf|ogg)$/,
+        loader: 'file-loader',
+        options: {
+          publicPath: '/',
+        }
+      },
     ]
   }
 };

@@ -1,5 +1,6 @@
 var React = require('react');
 const Nav = require('Nav');
+const rains = require('../image/rains.png');
 
 
 var Main = (props) => {
@@ -11,6 +12,7 @@ var Main = (props) => {
             {props.children}
           </div>
         </div>
+        <img  src={rains} alt="life is better" />
       </div>
     );
   }
