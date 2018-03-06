@@ -129,6 +129,8 @@
 	//load foundation
 	__webpack_require__(261);
 	$(document).foundation();
+	// App css
+	__webpack_require__(266);
 	ReactDOM.render(React.createElement(
 	  Router,
 	  { history: hashHistory },
@@ -20527,12 +20529,10 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
-	 * Copyright 2013-2015, Facebook, Inc.
-	 * All rights reserved.
+	 * Copyright (c) 2013-present, Facebook, Inc.
 	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
+	 * This source code is licensed under the MIT license found in the
+	 * LICENSE file in the root directory of this source tree.
 	 */
 
 	'use strict';
@@ -25032,7 +25032,7 @@
 	            React.createElement(
 	              'li',
 	              null,
-	              React.createElement('input', { type: 'search', placeholder: 'Search weather' })
+	              React.createElement('input', { type: 'search', placeholder: 'Search weather by city' })
 	            ),
 	            React.createElement(
 	              'li',
@@ -25129,7 +25129,7 @@
 	      null,
 	      React.createElement(
 	        'h1',
-	        { className: 'text-center' },
+	        { className: 'text-center page-title' },
 	        'Get Weather'
 	      ),
 	      React.createElement(WeatherForm, { onSearch: this.handleSearch }),
@@ -25167,7 +25167,7 @@
 	      React.createElement(
 	        'form',
 	        { onSubmit: this.onFormSubmit },
-	        React.createElement('input', { type: 'text', ref: 'location', placeholder: 'Enter city name' }),
+	        React.createElement('input', { type: 'search', placeholder: 'Search weather by city', ref: 'location' }),
 	        React.createElement('br', null),
 	        React.createElement(
 	          'button',
@@ -26796,7 +26796,7 @@
 	    null,
 	    React.createElement(
 	      'h1',
-	      { className: 'text-center' },
+	      { className: 'text-center page-title' },
 	      'About'
 	    ),
 	    React.createElement(
@@ -26863,7 +26863,7 @@
 	    null,
 	    React.createElement(
 	      'h1',
-	      { className: 'text-center' },
+	      { className: 'text-center page-title' },
 	      'Examples'
 	    ),
 	    React.createElement(
@@ -27519,6 +27519,70 @@
 		// send back the fixed css
 		return fixedCss;
 	};
+
+
+/***/ }),
+/* 266 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	
+	var content = __webpack_require__(267);
+
+	if(typeof content === 'string') content = [[module.id, content, '']];
+
+	var transform;
+	var insertInto;
+
+
+
+	var options = {"hmr":true}
+
+	options.transform = transform
+	options.insertInto = undefined;
+
+	var update = __webpack_require__(264)(content, options);
+
+	if(content.locals) module.exports = content.locals;
+
+	if(false) {
+		module.hot.accept("!!../../node_modules/css-loader/index.js!./app.css", function() {
+			var newContent = require("!!../../node_modules/css-loader/index.js!./app.css");
+
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+
+			var locals = (function(a, b) {
+				var key, idx = 0;
+
+				for(key in a) {
+					if(!b || a[key] !== b[key]) return false;
+					idx++;
+				}
+
+				for(key in b) idx--;
+
+				return idx === 0;
+			}(content.locals, newContent.locals));
+
+			if(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');
+
+			update(newContent);
+		});
+
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ }),
+/* 267 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(263)(false);
+	// imports
+
+
+	// module
+	exports.push([module.id, ".page-title {\n  margin-top : 2.5rem;\n  margin-bottom: 2.5rem;\n  color: red;\n  font-family: \"Times New Roman\", Times, serif;\n}\ninput [type=search] {\n  box-shadow: none;\n}\n", ""]);
+
+	// exports
 
 
 /***/ })
