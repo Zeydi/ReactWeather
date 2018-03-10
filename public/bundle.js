@@ -24974,7 +24974,12 @@
 
 	  onSearch: function onSearch(e) {
 	    e.preventDefault();
-	    alert('Not yet wired up!');
+	    var location = this.refs.search.value;
+	    var encodedLocation = encodeURIComponent(location);
+	    if (location.length > 0) {
+	      this.refs.search.value = '';
+	      window.location.hash = '#/?location=' + encodedLocation;
+	    }
 	  },
 	  render: function render() {
 	    return React.createElement(
@@ -25032,7 +25037,7 @@
 	            React.createElement(
 	              'li',
 	              null,
-	              React.createElement('input', { type: 'search', placeholder: 'Search weather by city' })
+	              React.createElement('input', { type: 'search', placeholder: 'Search weather by city', ref: 'search' })
 	            ),
 	            React.createElement(
 	              'li',
@@ -25082,6 +25087,7 @@
 	var WeatherForm = __webpack_require__(230);
 	var WeatherMessage = __webpack_require__(231);
 	var openWeatherMap = __webpack_require__(232);
+
 	var Weather = React.createClass({
 	  displayName: 'Weather',
 
@@ -25093,7 +25099,9 @@
 	  handleSearch: function handleSearch(location) {
 	    var that = this;
 	    this.setState({
-	      isLoading: true
+	      isLoading: true,
+	      location: undefined,
+	      temp: undefined
 	    });
 	    openWeatherMap.getTemp(location).then(function (temp) {
 	      that.setState({
@@ -25105,6 +25113,20 @@
 	      that.setState({ isLoading: false });
 	      alert(err);
 	    });
+	  },
+	  componentDidMount: function componentDidMount() {
+	    var location = this.props.location.query.location;
+	    if (location && location.length > 0) {
+	      this.handleSearch(location);
+	      window.location.hash = '#/';
+	    }
+	  },
+	  componentWillReceiveProps: function componentWillReceiveProps(newProps) {
+	    var location = newProps.location.query.location;
+	    if (location && location.length > 0) {
+	      this.handleSearch(location);
+	      window.location.hash = '#/';
+	    }
 	  },
 
 	  render: function render() {
@@ -27545,8 +27567,8 @@
 	if(content.locals) module.exports = content.locals;
 
 	if(false) {
-		module.hot.accept("!!../../node_modules/css-loader/index.js!./app.css", function() {
-			var newContent = require("!!../../node_modules/css-loader/index.js!./app.css");
+		module.hot.accept("!!../../node_modules/css-loader/index.js!../../node_modules/sass-loader/index.js!./app.scss", function() {
+			var newContent = require("!!../../node_modules/css-loader/index.js!../../node_modules/sass-loader/index.js!./app.scss");
 
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 
@@ -27580,7 +27602,7 @@
 
 
 	// module
-	exports.push([module.id, ".page-title {\n  margin-top : 2.5rem;\n  margin-bottom: 2.5rem;\n  color: red;\n  font-family: \"Times New Roman\", Times, serif;\n}\ninput [type=search] {\n  box-shadow: none;\n}\n", ""]);
+	exports.push([module.id, ".page-title {\n  margin-top: 2.5rem;\n  margin-bottom: 2.5rem;\n  color: purple;\n  font-family: \"Times New Roman\", Times, serif; }\n\ninput [type=search] {\n  box-shadow: none; }\n", ""]);
 
 	// exports
 
