@@ -2,6 +2,7 @@ const React = require('react');
 const WeatherForm = require('./WeatherForm');
 const WeatherMessage = require('./WeatherMessage');
 const openWeatherMap = require('openWeatherMap');
+const Images = require('./Images');
 
 const Weather = React.createClass({
   getInitialState: function() {
@@ -58,6 +59,7 @@ const Weather = React.createClass({
           <h1 className="text-center page-title">Get Weather</h1>
           <WeatherForm onSearch={this.handleSearch}/>
           {renderMessage()}
+          <Images temp={temp} style={{width: "100%"}}/>
     </div>
     );
   }
