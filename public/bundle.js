@@ -24942,10 +24942,10 @@
 	    React.createElement(Nav, null),
 	    React.createElement(
 	      'div',
-	      { className: 'row' },
+	      null,
 	      React.createElement(
 	        'div',
-	        { className: 'columns medium-6 large-6 small-centered' },
+	        null,
 	        props.children
 	      )
 	    )
@@ -25123,12 +25123,20 @@
 	      'div',
 	      null,
 	      React.createElement(
-	        'h1',
-	        { className: 'text-center page-title' },
-	        'Get Weather'
+	        'div',
+	        { className: 'row' },
+	        React.createElement(
+	          'div',
+	          { className: 'columns medium-6 large-6 small-centered' },
+	          React.createElement(
+	            'h1',
+	            { className: 'text-center page-title' },
+	            'Get Weather'
+	          ),
+	          React.createElement(WeatherForm, { onSearch: this.handleSearch }),
+	          renderMessage()
+	        )
 	      ),
-	      React.createElement(WeatherForm, { onSearch: this.handleSearch }),
-	      renderMessage(),
 	      React.createElement(Images, { temp: temp, style: { width: "100%" } })
 	    );
 	  }
@@ -26796,9 +26804,9 @@
 	      React.createElement('img', { className: 'className="columns medium-3 large-3 small-centered', src: __webpack_require__(259), width: '100%' })
 	    );
 	  } else if (temp < 10) {
-	    return React.createElement('img', { calssName: 'centered', src: __webpack_require__(259), width: '300' });
+	    return React.createElement('img', { className: 'float-center', calssName: 'centered', src: __webpack_require__(259), width: '300' });
 	  } else if (temp < 20) {
-	    return React.createElement('img', { src: __webpack_require__(258), width: '300' });
+	    return React.createElement('img', { className: 'float-center', src: __webpack_require__(258), width: '300' });
 	  } else {
 	    return React.createElement('img', { className: 'float-center', src: __webpack_require__(256), width: '300' });
 	  }

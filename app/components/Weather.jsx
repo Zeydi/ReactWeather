@@ -55,12 +55,17 @@ const Weather = React.createClass({
       }
     }
     return (
-      <div>
+			<div>
+			<div className="row">
+      <div className="columns medium-6 large-6 small-centered">
           <h1 className="text-center page-title">Get Weather</h1>
           <WeatherForm onSearch={this.handleSearch}/>
           {renderMessage()}
-          <Images temp={temp} style={{width: "100%"}}/>
+          
     </div>
+		</div>
+		<Images temp={temp} style={{width: "100%"}}/>
+		</div>
     );
   }
 });
