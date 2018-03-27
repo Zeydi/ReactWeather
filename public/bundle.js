@@ -26861,7 +26861,7 @@
 	    React.createElement(
 	      'p',
 	      null,
-	      'This is a weather application build on React in the complete React web App Developer course'
+	      'This is a weather application build on React '
 	    ),
 	    React.createElement(
 	      'ul',

@@ -5,7 +5,7 @@ const About = (props) => {
     return (
       <div>
           <h1 className="text-center page-title">About</h1>
-          <p>This is a weather application build on React in the complete React web App Developer course</p>
+          <p>This is a weather application build on React </p>
           <ul>
             <li>
               I used <a href="https://facebook.github.io/react"> React library</a>  in this project
